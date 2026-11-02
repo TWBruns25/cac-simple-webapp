@@ -2,7 +2,7 @@ FROM node:20-alpine AS build
 RUN apk update && apk upgrade
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
 
 FROM node:20-alpine
